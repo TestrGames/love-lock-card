@@ -45,7 +45,7 @@ class LoveLockCard extends HTMLElement {
     // Password Script
     var passwordScript = `
             var element = this;
-            var pass = prompt("Please enter your password");
+            var pass = prompt("Zadej heslo");
             if (btoa(pass) !== ${password}) {
                 alert("Invalid Password");
             } else {
@@ -59,7 +59,7 @@ class LoveLockCard extends HTMLElement {
     // Confirm Script
     var confirmScript = `
             var element = this;
-            var confirmpopup = confirm("Are you sure you want to unlock?");
+            var confirmpopup = confirm("Chceš opravdu odemknout tuto kartu?");
             if (confirmpopup == true) {
                 this.setAttribute("style", ${coverHide});
             }
@@ -101,7 +101,7 @@ class LoveLockCard extends HTMLElement {
     // Lock Icon
     const lockicon = document.createElement("ha-icon");
     lockicon.setAttribute("icon", "mdi:lock-outline");
-    lockicon.setAttribute("style", "position:absolute; top: 10px; right:7px;");
+    lockicon.setAttribute("style", "position:relative; top: 10px; right:7px;");
     cover.appendChild(lockicon);
 
     this._refCards = [];
